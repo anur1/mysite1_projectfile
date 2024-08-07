@@ -53,8 +53,8 @@ def user_login (request,):
 def user_register (request,):
     if request.method=="POST":
         #form = UserCreationForm (request.POST)
-        form = NewUserForm(request.POST)
-        if form.is_valid():
+        form = NewUserForm(request.POST)  
+        if form.is_valid():  
             form.save()
             
             #kişiyi kaydettikten sonra login olsun
