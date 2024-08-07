@@ -55,14 +55,14 @@ def user_register (request,):
         #form = UserCreationForm (request.POST)
         form = NewUserForm(request.POST)  
         if form.is_valid():  
-            form.save()
+            form.save()   
             
             #kişiyi kaydettikten sonra login olsun
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password1"]
             user = authenticate(request, username = username, password = password)
             login (request, user)
-            return redirect("index")
+            return redirect("index")   
         else:
             return render(request, "account/register.html", {"form": form})
 
