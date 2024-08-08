@@ -50,11 +50,18 @@
             <strong>
             <a href="#" class="nav-link"style="color:green">Hoş Geldiniz, {{user.username}}</a>  </strong>    </li>
         
-        <li class="nav-item"> <strong>  
 
+
+        <li class="nav-item"> <strong> 
+            <a href="{% url "change_password" %}" class="nav-link" style="color:orange">Parola Güncelleme </a>
+        </strong>         </li>
+        
+
+
+
+        <li class="nav-item"> <strong> 
             <a href="{% url "user_logout" %}" class="nav-link" style="color:red">Logout  </a>
-        </strong>
-        </li>
+        </strong>         </li>
         
         <!--giriş yapmamış olanlar login veya register'ı görür-->
         {% else %}
