@@ -1,9 +1,11 @@
 from django.db import models
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField    #####11Agustos-1     
 
 
-class Category(models.Model):
-    name = models.CharField( max_length=50)
+
+class Category(models.Model):    
+    name = models.CharField( max_length=50)      
     slug = models.SlugField(default= "", null=False, unique=True, db_index = True, max_length=50)
 
     def __str__(self):
