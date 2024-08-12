@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'courses',
     'pages',
     'account',
-    'ckeditor', ##11 agustos - 2
+    'ckeditor', ##11 agustos - 2  
 
 ]
 
