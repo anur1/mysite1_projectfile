@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
-import os
+#import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'courses',
     'pages',
     'account',
-    'ckeditor', ##11 agustos - 2  
+   # 'ckeditor', ##11 agustos - 2  
 
 ]
 
@@ -165,4 +165,4 @@ MESSAGE_TAGS={   ##sayfaya gönderilen mesajların html class'ını bootstrap cl
 }
 
 
-CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')  #ckeditor
+#CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')  #ckeditor
