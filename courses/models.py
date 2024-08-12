@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
-#from ckeditor.fields import RichTextField    #####ckeditor - 11Agustos-1        
+#from ckeditor.fields import RichTextField    #####ckeditor - 11Agustos-1      
+#from tinymce.fields import RichTextField    
 
 
 
