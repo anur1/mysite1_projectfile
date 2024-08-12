@@ -133,7 +133,7 @@ STATICFILES_DIRS = [
 
 #STATIC_ROOT = BASE_DIR / 'static' ## 11 agustos ckeditor icin eklendi
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')   ## 11 agustos ckeditor icin eklendi
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   ## 11 agustos ckeditor icin eklendi
 
 
 
@@ -163,3 +163,6 @@ MESSAGE_TAGS={   ##sayfaya gönderilen mesajların html class'ını bootstrap cl
     messages.WARNING: "alert-warning",
     messages.ERROR:"alert-danger",
 }
+
+
+CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')  #ckeditor
