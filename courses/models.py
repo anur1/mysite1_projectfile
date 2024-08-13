@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
-#from ckeditor.fields import RichTextField    #####ckeditor - 11Agustos-1      
-#from tinymce.fields import RichTextField    
+#pip install django-ckeditor #ckeditor1  
+#from ckeditor.fields import RichTextField    #ckeditor2    
+  
 
 
 
@@ -17,7 +18,9 @@ class Category(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
-    #imageUrl = models.CharField(max_length=50, blank=False)
+    subtitle = models.CharField(max_length=100, default="")   #ckeditor4 
+    #description = RichTextField()    #ckeditor3 
+    #imageUrl = models.CharField(max_length=50, blank=False)  
     image = models.FileField(upload_to="images", default ="")  #yüklenen dosyaları uploads/images klasörüne kaydeder. ImageField çalışmazsa FileField kullanılabilir. 
     date = models.DateField(auto_now=True)
     isActive = models.BooleanField(default=False)
