@@ -38,3 +38,12 @@ class Course(models.Model):
 
 class UploadModel (models.Model):
     image = models.FileField(upload_to="images")
+
+class Slider (models.Model):
+    title = models.CharField(max_length=100)
+    image = models.FileField (upload_to="images")
+    is_active = models.BooleanField(default=False)
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null = True, blank=True)
+    
+    def __str__(self): 
+        return f"{self.title}"
