@@ -31,7 +31,7 @@ class CategoryAdmin(admin.ModelAdmin):
         return obj.course_set.count()
     
 
-
+#slider'ı admin panele ekleme
 admin.site.register(Slider)
         
 
