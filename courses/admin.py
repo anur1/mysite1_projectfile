@@ -33,5 +33,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 #slider'ı admin panele ekleme
 admin.site.register(Slider)
-        
 
+""
