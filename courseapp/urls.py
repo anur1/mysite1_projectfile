@@ -11,4 +11,5 @@ urlpatterns = [
     path('', include('pages.urls')), 
     path('account/', include('account.urls'))
 
-] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+  + static (settings.STATIC_URL, document_root = settings.STATIC_ROOT)   #bu ekleme static dosyaların dışarıdan erişilebilir olması için yapıldı
