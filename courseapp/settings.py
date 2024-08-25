@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os  ###ckeditor####
+from os import getenv   #secret key için eklendi
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yrlps@a0*%^$p*eb^*+ng0#%%4tdzrgbu&pdq-*84f153j6(k+'
+#SECRET_KEY = 'django-insecure-yrlps@a0*%^$p*eb^*+ng0#%%4tdzrgbu&pdq-*84f153j6(k+'
+SECRET_KEY =  getenv("SECRET_KEY", 'django-insecure-yrlps@a0*%^$p*eb^*+ng0#%%4tdzrgbu&pdq-*84f153j6(k+')   #environment variable ayarı 1
+#getenv("1", "2") --> environment variables tanımlı ise 1, değilse 2 uygulanır.
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True    Debug uyarıları sadece develpment ta verilsin
+DEBUG = getenv("IS_DEVELOPMENT", True)   #environment variable ayarı 2
 
-ALLOWED_HOSTS = ['*']  ##6Haziran2024-PythonAnywhere için eklendi
+#ALLOWED_HOSTS = ['*']  ##6Haziran2024-PythonAnywhere için eklendi
+ALLOWED_HOSTS = [
+    getenv("APP_HOST", "*")         #environment variable ayarı 3
+] 
 
 
 # Application definition
